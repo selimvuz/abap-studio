@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-29T07:20:41.565Z",
+  "total": 121,
+  "passed": 120,
+  "skipped": 1,
+  "failed": 0,
+  "suites": [
+    {
+      "name": "desktop-storage.test.ts",
+      "status": "passed",
+      "total": 9,
+      "passed": 8,
+      "skipped": 0
+    },
+    {
+      "name": "desktop-worker.test.ts",
+      "status": "passed",
+      "total": 7,
+      "passed": 7,
+      "skipped": 0
+    },
+    {
+      "name": "language-adversarial.test.ts",
+      "status": "passed",
+      "total": 20,
+      "passed": 20,
+      "skipped": 0
+    },
+    {
+      "name": "language.test.ts",
+      "status": "passed",
+      "total": 85,
+      "passed": 85,
+      "skipped": 0
+    }
+  ]
+}

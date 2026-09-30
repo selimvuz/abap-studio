@@ -1,0 +1,7 @@
+node_modules
+.work
+dist-electron
+dist-renderer
+release
+package-lock.json
+docs/screenshots

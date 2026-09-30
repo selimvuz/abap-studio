@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-29T07:23:10.842Z",
+  "packaged": true,
+  "chromiumSandboxDisabledForTest": true,
+  "checks": [
+    "New Program dialog and explicit Save write a workspace .abap file",
+    "Save As creates a separate report and preserves the original",
+    "Rename updates the program list, active document and stored file",
+    "Duplicate preserves source; Delete requires confirmation and removes the file",
+    "Dirty Close supports Cancel, Save changes, and Discard without silent data loss",
+    "Ctrl P quick-open and Ctrl Shift P command palette execute real editor actions",
+    "Check displays a located Problems diagnostic, Monaco error marker and line navigation",
+    "F8 parameter dialog supplies defaults and entered values to the interpreter",
+    "No uncaught renderer exceptions through program-management workflows"
+  ]
+}
