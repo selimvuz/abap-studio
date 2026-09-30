@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-29T07:22:03.702Z",
+  "packaged": true,
+  "chromiumSandboxDisabledForTest": true,
+  "checks": [
+    "Secure window configuration and renderer without Node access",
+    "Milestone 1 syntax check",
+    "Actual Monaco → F8 → interpreter → Hello World output",
+    "Explicit save persists plain ABAP source",
+    "Milestone 2 structure VALUE + LOOP internal table output",
+    "Located unknown-variable diagnostic",
+    "Empty infinite-loop statement budget and clean restart",
+    "Stop terminates worker while renderer stays responsive",
+    "Debugger pauses, steps, exposes typed variables, and continues",
+    "Dark and light editor rendering",
+    "No uncaught renderer exceptions"
+  ]
+}

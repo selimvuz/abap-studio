@@ -1,0 +1,102 @@
+{
+  "name": "abap-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An offline ABAP report studio with an interpreted runtime.",
+  "author": "ABAP Studio contributors",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist-electron/main.cjs",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "node scripts/smoke.mjs",
+    "build": "npm run typecheck && node scripts/build.mjs",
+    "dist": "npm run build && node scripts/package.mjs",
+    "dist:dir": "npm run build && node scripts/package.mjs --dir",
+    "postinstall": "node scripts/setup.mjs",
+    "format:source": "prettier --write apps packages tests scripts *.ts *.json docs/*.md README.md",
+    "test:ui": "node scripts/ui-smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "electron": "44.4.5",
+    "electron-builder": "26.15.3",
+    "lucide-react": "1.48.0",
+    "monaco-editor": "0.57.0",
+    "playwright": "1.63.0",
+    "pngjs": "7.0.0",
+    "prettier": "3.9.9",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "rolldown": "1.2.11",
+    "typescript": "7.0.2",
+    "vite": "8.3.1",
+    "vitest": "5.0.2"
+  },
+  "build": {
+    "appId": "dev.abap.studio",
+    "productName": "ABAP Studio",
+    "copyright": "Copyright © 2026 ABAP Studio contributors",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "asar": true,
+    "asarUnpack": [
+      "dist-electron/execution-worker.cjs"
+    ],
+    "files": [
+      "dist-electron/**/*",
+      "dist-renderer/**/*",
+      "build/icon.ico",
+      "docs/**/*",
+      "README.md",
+      "LICENSE",
+      "package.json"
+    ],
+    "npmRebuild": false,
+    "extraFiles": [
+      {
+        "from": "docs/THIRD-PARTY-NOTICES.txt",
+        "to": "THIRD-PARTY-NOTICES.txt"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "ABAP-Studio-Setup-${version}-${arch}.${ext}",
+      "signAndEditExecutable": true
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "ABAP Studio",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "deleteAppDataOnUninstall": false,
+      "runAfterFinish": false
+    },
+    "electronLanguages": [
+      "en-US"
+    ]
+  }
+}
